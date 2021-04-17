@@ -1,19 +1,18 @@
-t = int
-hour = int
-minute = int
-sec = int
-t = int(input("Приветствую, введи свое число в секундах: "))
-hour = t // 3600
-minute = (t - hour * 3600) // 60
-sec = t - (hour * 3600 + minute * 60)
-if minute < 10:
-    minute = str("0" + str(minute))
-else:
-    minute = int(minute)
-if sec < 10:
-    sec = str("0" + str(sec))
-else:
-    sec = int(sec)
-print ("Твое число в формате чч:мм:сс - %s : %s : %s" %(hour,minute,sec))
+# Для списка реализовать обмен значений соседних элементов, т.е.
+# Значениями обмениваются элементы с индексами 0 и 1, 2 и 3 и т.д.
+# При нечетном количестве элементов последний сохранить на своем месте.
+# Для заполнения списка элементов необходимо использовать функцию input().
 
 
+run = input("Введите список значений: ")
+print("Ваш исходный набор элементов: ", run.split())
+m = run.split()
+#h = run // 2
+n = 1
+for p in range(0, len(m), 2):
+    c = (2 * (int(n)) - 2)
+    b = int((2 * (int(n))))
+    m.insert(b, (m[c]))
+    m.pop(c)
+    n = int(n) + 1
+print(m)
