@@ -1,19 +1,18 @@
-t = int
-hour = int
-minute = int
-sec = int
-t = int(input("Приветствую, введи свое число в секундах: "))
-hour = t // 3600
-minute = (t - hour * 3600) // 60
-sec = t - (hour * 3600 + minute * 60)
-if minute < 10:
-    minute = str("0" + str(minute))
-else:
-    minute = int(minute)
-if sec < 10:
-    sec = str("0" + str(sec))
-else:
-    sec = int(sec)
-print ("Твое число в формате чч:мм:сс - %s : %s : %s" %(hour,minute,sec))
+# 2. Создать текстовый файл (не программно), сохранить в нем несколько строк, выполнить подсчет количества строк,
+# количества слов в каждой строке.
 
 
+with open("morozko.txt", "w+", encoding="utf-8") as chudo:
+    num = 0
+    while True:
+        text = input("enter smt: ")
+        num = num + 1
+        if text == "":
+            break
+        else:
+            print(f"{num}) {text}", file=chudo)
+            my_text = text.split()
+            print(f"Количество слов: ", len(my_text))
+    chudo.seek(0)
+    print(chudo.read())
+    print(f"Всего {num - 1} строк")

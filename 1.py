@@ -1,13 +1,13 @@
-a = str
-b = str
-c = int
-d = int
-a = input("Введите ваше имя: ")
-print("Привет, ", a , "!")
-b = input("Как твои дела? ")
-print("Улыбнись, ведь", "все", b)
-c = input("Сколько тебе лет? ")
-print("Тебе ", c , ". Круто!")
-d = input("Загадай число, и я попробую его угадать: ")
-print("Твое число - ", d , "!")
-print("Хорошего дня, ", a )
+# 1. Создать программно файл в текстовом формате, записать в него построчно данные, вводимые пользователем.
+# Об окончании ввода данных свидетельствует пустая строка.
+
+
+with open("kolobok.txt", "w+", encoding="utf-8") as skazka:
+    while True:
+        text = input("enter smt: ")
+        if text == "":
+            break
+        else:
+            print(text, file=skazka)
+    skazka.seek(0)
+    print(skazka.read())
